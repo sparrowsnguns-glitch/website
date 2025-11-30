@@ -1,107 +1,224 @@
-<!DOCTYPE html>
-<html lang="de">
+<!doctype html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Maderotherapy Ibiza – Sculpting • Wellness • Lymphatic Reset</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Maderotherapy Ibiza — Sculpting • Wellness • Lymphatic Reset</title>
+  <meta name="description" content="Luxury Maderotherapy in Ibiza — bespoke body-sculpting, lymphatic reset and Mediterranean wellness. Personalized plans & concierge booking." />
+
+  <!-- NOTE: System fonts used for a self-contained package. 
+       Optional: uncomment Google Fonts link below for Playfair+Inter in production.
+  -->
+  <!--
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  -->
+
+  <link rel="stylesheet" href="style.css">
 </head>
+<body id="top">
 
-<body>
+  <!--
+    Logo concept (inline SVG) — simple, editable logomark + wordmark.
+    Figma note: export this SVG to Figma as vector and use color tokens.
+  -->
+  <header class="site-header" role="banner" aria-label="Maderotherapy Ibiza header">
+    <div class="container header-inner">
+      <a href="#top" class="brand" aria-label="Maderotherapy Ibiza home">
+        <svg class="logo-mark" width="44" height="44" viewBox="0 0 44 44" aria-hidden="true">
+          <!-- simple logomark: stylized madero tool + sun -->
+          <defs><linearGradient id="g1" x1="0" x2="1"><stop offset="0" stop-color="#D9C8A3"/><stop offset="1" stop-color="#C6B9A6"/></linearGradient></defs>
+          <circle cx="22" cy="12" r="8" fill="url(#g1)" opacity="0.95"/>
+          <rect x="16" y="22" width="12" height="14" rx="6" fill="#EFE6D9"/>
+        </svg>
+        <div class="brand-text">
+          <div class="brand-name">Maderotherapy <span class="brand-muted">Ibiza</span></div>
+        </div>
+      </a>
 
-<!-- HERO -->
-<section class="hero">
-    <div class="hero-content">
-        <h1>Maderotherapy Ibiza</h1>
-        <p class="subtitle">Body Sculpting • Lymphatic Wellness • Mediterranean Reset</p>
-        <button class="cta" id="startQuizBtn">Start Personalized Body Quiz</button>
+      <nav class="site-nav" role="navigation" aria-label="Primary">
+        <a href="#about">About</a>
+        <a href="#treatments">Treatments</a>
+        <a href="#plans">Plans</a>
+        <a href="#book" class="btn-link">Book</a>
+      </nav>
     </div>
-</section>
+  </header>
 
-<!-- INTRO SECTION -->
-<section class="intro container">
-    <h2>Was ist Maderotherapie?</h2>
-    <p>
-        Eine natürliche, mediterrane manuelle Technik zur Körperformung,
-        Entgiftung, Lymphaktivierung und Cellulite-Reduktion – perfekt für
-        High-End-Wellnesssuchende auf Ibiza.
-    </p>
+  <!-- HERO -->
+  <main>
+    <section id="hero" class="hero" role="region" aria-label="Hero — Maderotherapy Ibiza">
+      <div class="hero-bg" aria-hidden="true"></div>
 
-    <div class="icon-row">
-        <div class="icon-card">Sculpting</div>
-        <div class="icon-card">Detox</div>
-        <div class="icon-card">Anti-Cellulite</div>
-        <div class="icon-card">Relaxation</div>
-    </div>
-</section>
+      <div class="container hero-inner">
+        <div class="hero-left">
+          <h1 class="hero-title">Maderotherapy Ibiza</h1>
+          <p class="hero-sub">Body Sculpting · Lymphatic Wellness · Mediterranean Reset</p>
 
-<!-- QUIZ PREVIEW -->
-<section class="quiz-preview container">
-    <div class="quiz-card">
-        <h3>Discover Your Tailored Body Treatment Plan</h3>
-        <p>Erhalte in 1 Minute eine personalisierte Empfehlung.</p>
-        <button class="cta secondary" id="startQuizBtn2">Start Quiz</button>
-    </div>
-</section>
+          <p class="hero-desc">
+            Experience a bespoke wooden-tool body sculpting ritual inspired by Mediterranean wellness — designed to de-puff, contour, and renew.
+          </p>
 
-<!-- BENEFITS -->
-<section class="benefits container">
-    <h2>Treatment Benefits</h2>
-    <div class="benefit-grid">
-        <div class="benefit-card">Lymphatic Drainage</div>
-        <div class="benefit-card">Body Contouring</div>
-        <div class="benefit-card">Cellulite Reduction</div>
-        <div class="benefit-card">Wellness Reset</div>
-    </div>
-</section>
+          <div class="hero-actions">
+            <button id="startQuizBtn" class="btn btn-primary">Start Personalized Body Quiz</button>
+            <a href="#book" class="btn btn-outline">Book a Concierge Consultation</a>
+          </div>
 
-<!-- RESULTS PREVIEW -->
-<section class="results container">
-    <h2>Example Body Plans</h2>
-    <div class="result-grid">
-        <div class="result-card">
-            <h3>Instant Glow</h3>
-            <p>2–3 Sessions</p>
-            <ul><li>Sofort spürbare Leichtigkeit</li><li>Glow Effekt</li></ul>
+          <ul class="tiny-features" aria-hidden="true">
+            <li>Sculpting</li>
+            <li>Detox</li>
+            <li>Anti-Cellulite</li>
+            <li>Relaxation</li>
+          </ul>
         </div>
 
-        <div class="result-card">
-            <h3>Contour Essentials</h3>
-            <p>5 Sessions</p>
-            <ul><li>Definition</li><li>Formende Wirkung</li></ul>
+        <aside class="hero-right" aria-hidden="true">
+          <!-- tasteful silhouette / texture card — purely decorative -->
+          <div class="hero-card">
+            <div class="hero-silhouette"></div>
+          </div>
+        </aside>
+      </div>
+
+      <!-- subtle particles / sun-dust for premium texture (CSS animated) -->
+      <div class="sun-dust" aria-hidden="true"></div>
+    </section>
+
+    <!-- ABOUT / INTRO -->
+    <section id="about" class="section section-intro container" aria-label="What is Maderotherapy">
+      <div class="split">
+        <div class="split-left">
+          <h2>What is Maderotherapy?</h2>
+          <p class="lead">
+            A specialized wooden-tool therapy that sculpts the body and supports lymphatic flow. We combine precision techniques with restorative touch to deliver visible contouring, reduced puffiness, and serene relaxation. (Non-invasive. Personalized.)</p>
+          <p class="copy-small muted">Note: wood therapy can support lymphatic drainage and improve the look of skin texture; results vary per individual. We tailor every plan to your needs. :contentReference[oaicite:5]{index=5}</p>
         </div>
 
-        <div class="result-card">
-            <h3>Body Refinement</h3>
-            <p>8 Sessions</p>
-            <ul><li>Lymphreset</li><li>Cellulite-Verbesserung</li></ul>
+        <div class="split-right icons-grid" aria-hidden="false">
+          <div class="icon-pill"><span class="icon-emoji">🪵</span><strong>Sculpting</strong><small>Targeted shaping</small></div>
+          <div class="icon-pill"><span class="icon-emoji">💧</span><strong>Detox</strong><small>Lymphatic aid</small></div>
+          <div class="icon-pill"><span class="icon-emoji">✨</span><strong>Cellulite</strong><small>Texture smoothing</small></div>
+          <div class="icon-pill"><span class="icon-emoji">🛀</span><strong>Relax</strong><small>Meditative calm</small></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- QUIZ PREVIEW -->
+    <section id="quizPreview" class="section container section-quiz" aria-label="Quiz preview">
+      <div class="quiz-card">
+        <div class="quiz-text">
+          <h3>Discover Your Tailored Body Treatment Plan</h3>
+          <p class="muted">A 60-second consultation to match intensity, frequency, and focus areas — delivered with concierge follow-up.</p>
+          <button id="quizStart" class="btn btn-ghost">Start the Quiz</button>
+        </div>
+        <div class="quiz-preview" aria-hidden="true" id="previewRoot">
+          <!-- JS injects animated question preview cards -->
+        </div>
+      </div>
+    </section>
+
+    <!-- TREATMENTS -->
+    <section id="treatments" class="section container section-cards" aria-label="Treatment Benefits">
+      <h2>Treatment Benefits</h2>
+      <p class="muted">Designed for travelers and residents seeking a premium, results-oriented ritual.</p>
+
+      <div class="grid grid-4">
+        <article class="card card-soft">
+          <h4>Lymphatic Drainage</h4>
+          <p>De-puffing, drainage and lightness after the first session.</p>
+        </article>
+
+        <article class="card card-soft">
+          <h4>Body Contouring</h4>
+          <p>Precision strokes sculpt and define natural curves over time.</p>
+        </article>
+
+        <article class="card card-soft">
+          <h4>Cellulite Reduction</h4>
+          <p>Targeted protocols to improve texture and circulation.</p>
+        </article>
+
+        <article class="card card-soft">
+          <h4>Wellness Reset</h4>
+          <p>Integrated plans for circulation, sleep quality, and stress reduction.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- PLANS / RESULTS -->
+    <section id="plans" class="section container section-plans" aria-label="Example Plans">
+      <h2>Example Plans</h2>
+      <p class="muted">Select the pace that suits your stay — all plans are customizable.</p>
+
+      <div class="grid grid-4 plans-grid">
+        <div class="plan card-outline">
+          <h5>Instant Glow</h5>
+          <p class="meta">1–2 sessions · immediate de-puffing</p>
         </div>
 
-        <div class="result-card">
-            <h3>Complete Body Reset</h3>
-            <p>10+ Sessions</p>
-            <ul><li>Kompletter Transform-Prozess</li><li>Ganzheitliche Wellness</li></ul>
+        <div class="plan card-outline">
+          <h5>Contour Essentials</h5>
+          <p class="meta">4–6 sessions · targeted refinement</p>
         </div>
+
+        <div class="plan card-outline">
+          <h5>Body Refinement</h5>
+          <p class="meta">6–10 sessions · deeper sculpting</p>
+        </div>
+
+        <div class="plan card-outline">
+          <h5>Complete Body Reset</h5>
+          <p class="meta">8–12 sessions · full lymphatic integration</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHATSAPP BOOKING -->
+    <section id="book" class="section container section-booking" aria-label="Booking">
+      <div class="booking-hero">
+        <div>
+          <h2>Book via WhatsApp</h2>
+          <p class="muted">Our concierge responds in English & Spanish. Share arrival details and we’ll craft your first session.</p>
+        </div>
+
+        <form id="whatsappForm" class="booking-form" onsubmit="return false" aria-label="WhatsApp booking form">
+          <label class="visually-hidden" for="clientName">Full name</label>
+          <input id="clientName" name="clientName" type="text" placeholder="Your full name" required autocomplete="name" />
+
+          <label class="visually-hidden" for="clientPhone">Phone</label>
+          <input id="clientPhone" name="clientPhone" type="tel" placeholder="+34 6xx xxx xxx" required autocomplete="tel" />
+
+          <button id="whatsappBtn" class="btn btn-whatsapp" aria-label="Book via WhatsApp">
+            <!-- small WhatsApp svg -->
+            <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.5 3.5A11 11 0 1 0 22 12l-1.7 6.2L14 20.5A11 11 0 0 0 20.5 3.5z"/></svg>
+            Book via WhatsApp
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="section container section-testimonials" aria-label="Testimonials" aria-hidden="false">
+      <h2>What our guests say</h2>
+      <div class="testi-wrap" id="testiCarousel" aria-live="polite">
+        <blockquote class="testi-card">"I woke up lighter — truly immediate results with an exquisite touch." <cite>— Ana, Barcelona</cite></blockquote>
+        <blockquote class="testi-card">"A ritual that feels medical and luxurious at once. Highly recommend." <cite>— Sofia, Madrid</cite></blockquote>
+        <blockquote class="testi-card">"Concierge booking, perfect timing — the team was professional and calm." <cite>— Claire, London</cite></blockquote>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-inner">
+      <small>© 2025 Maderotherapy Ibiza</small>
+      <nav aria-label="footer">
+        <a href="#about">About</a>
+        <a href="#treatments">Treatments</a>
+        <a href="#book">Book</a>
+      </nav>
     </div>
-</section>
+  </footer>
 
-<!-- WHATSAPP BOOKING -->
-<section class="booking container">
-    <h2>Book via WhatsApp</h2>
-    <div class="booking-card">
-        <input type="text" id="userName" placeholder="Dein Name" />
-        <button class="cta whatsapp" id="whatsappBtn">Book via WhatsApp</button>
-    </div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-    © 2025 Maderotherapy Ibiza
-</footer>
-
-<script src="app.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>
