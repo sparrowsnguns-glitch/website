@@ -3,10 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="IT-Sicherheitsberatung für den deutschen Mittelstand. NIS-2 Compliance, Ransomware-Prävention, Sicherheitsaudits — direkt, praktisch, ohne Umwege.">
+<meta name="keywords" content="IT-Sicherheit, NIS-2, Compliance, Mittelstand, Beratung">
+<meta name="theme-color" content="#1a1a18">
 <title>Müller IT-Sicherheit — Beratung für den Mittelstand</title>
+<link rel="canonical" href="https://example.com/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="dns-prefetch" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500&display=swap" rel="stylesheet">
+<meta property="og:title" content="Müller IT-Sicherheit — Beratung für den Mittelstand">
+<meta property="og:description" content="IT-Sicherheitsberatung für KMU. NIS-2 Compliance, Ransomware-Prävention, Sicherheitsaudits.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://example.com/">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -22,7 +31,7 @@
   --sans:     'Geist', 'Helvetica Neue', sans-serif;
 }
 
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
 
 body {
   font-family: var(--sans);
@@ -42,30 +51,45 @@ nav {
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--rule);
 }
+@media (max-width: 768px) {
+  nav { padding: 1rem 1.5rem; }
+}
 .logo {
   font-family: var(--serif);
   font-size: 1.05rem; letter-spacing: 0.01em;
   color: var(--ink); text-decoration: none;
+  flex-shrink: 0;
 }
 .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+@media (max-width: 768px) {
+  .nav-links { gap: 1.5rem; }
+  .nav-links a { font-size: 0.75rem; }
+}
 .nav-links a {
   font-size: 0.825rem; font-weight: 400; letter-spacing: 0.04em;
   text-transform: uppercase; color: var(--muted);
   text-decoration: none; transition: color 0.2s;
 }
-.nav-links a:hover { color: var(--ink); }
+.nav-links a:hover, .nav-links a:focus { color: var(--ink); outline: none; }
 .nav-contact {
   font-size: 0.825rem; font-weight: 500; color: var(--accent);
   text-decoration: none; letter-spacing: 0.01em;
   border-bottom: 1px solid currentColor; padding-bottom: 1px;
   transition: opacity 0.2s;
+  flex-shrink: 0;
 }
-.nav-contact:hover { opacity: 0.65; }
+@media (max-width: 768px) {
+  .nav-contact { font-size: 0.75rem; }
+}
+.nav-contact:hover, .nav-contact:focus { opacity: 0.65; outline: none; }
 
 /* ── HERO ── */
 .hero {
   padding: 12rem 3rem 7rem;
   max-width: 820px;
+}
+@media (max-width: 768px) {
+  .hero { padding: 8rem 1.5rem 5rem; }
 }
 .hero-eyebrow {
   font-size: 0.775rem; font-weight: 400; letter-spacing: 0.1em;
@@ -92,29 +116,48 @@ nav {
   max-width: 540px; line-height: 1.8;
   margin-bottom: 3rem;
 }
-.hero-links { display: flex; gap: 2.5rem; align-items: center; }
+@media (max-width: 768px) {
+  .hero-body { font-size: 0.95rem; }
+}
+.hero-links { display: flex; gap: 2.5rem; align-items: center; flex-wrap: wrap; }
+@media (max-width: 480px) {
+  .hero-links { gap: 1rem; flex-direction: column; align-items: flex-start; }
+}
 .link-primary {
   font-size: 0.875rem; font-weight: 500; color: var(--ink);
   text-decoration: none; letter-spacing: 0.01em;
   border-bottom: 1.5px solid var(--ink); padding-bottom: 2px;
   transition: color 0.2s, border-color 0.2s;
 }
-.link-primary:hover { color: var(--accent); border-color: var(--accent); }
+.link-primary:hover, .link-primary:focus { 
+  color: var(--accent); border-color: var(--accent); outline: none;
+}
 .link-secondary {
   font-size: 0.875rem; color: var(--muted);
   text-decoration: none; transition: color 0.2s;
 }
-.link-secondary:hover { color: var(--ink); }
+.link-secondary:hover, .link-secondary:focus { 
+  color: var(--ink); outline: none;
+}
 
 /* ── DIVIDER ── */
 .rule-section {
   border-top: 1px solid var(--rule);
-  display: grid; grid-template-columns: repeat(4, 1fr);
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   background: var(--bg);
+}
+@media (max-width: 1024px) {
+  .rule-section { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 640px) {
+  .rule-section { grid-template-columns: 1fr; }
 }
 .rule-stat {
   padding: 2.5rem 3rem;
   border-right: 1px solid var(--rule);
+}
+@media (max-width: 1024px) {
+  .rule-stat { padding: 2rem; }
 }
 .rule-stat:last-child { border-right: none; }
 .rule-num {
@@ -126,6 +169,9 @@ nav {
 
 /* ── SECTION ── */
 .section { padding: 6rem 3rem; }
+@media (max-width: 768px) {
+  .section { padding: 4rem 1.5rem; }
+}
 .section-inner { max-width: 1020px; margin: 0 auto; }
 
 .s-label {
@@ -144,10 +190,16 @@ nav {
 }
 
 /* ── NIS-2 ── */
-.nis2-section { background: var(--ink); }
+.nis2-section { background: var(--ink); padding: 6rem 3rem; }
+@media (max-width: 768px) {
+  .nis2-section { padding: 4rem 1.5rem; }
+}
 .nis2-inner {
   max-width: 1020px; margin: 0 auto;
   display: grid; grid-template-columns: 5fr 4fr; gap: 6rem; align-items: start;
+}
+@media (max-width: 768px) {
+  .nis2-inner { grid-template-columns: 1fr; gap: 3rem; }
 }
 .nis2-section .s-label { color: rgba(255,255,255,0.35); }
 .nis2-section .s-title { color: #fff; margin-bottom: 1rem; }
@@ -169,6 +221,9 @@ nav {
   font-size: 5rem; line-height: 1; color: #fff;
   letter-spacing: -0.03em; margin-bottom: 0.5rem;
 }
+@media (max-width: 768px) {
+  .aside-big { font-size: 3rem; }
+}
 .aside-big span { font-style: italic; color: rgba(255,255,255,0.3); }
 .aside-note { font-size: 0.85rem; color: rgba(255,255,255,0.4); line-height: 1.7; margin-bottom: 2rem; }
 .aside-note strong { color: rgba(255,255,255,0.7); font-weight: 500; }
@@ -179,10 +234,17 @@ nav {
 /* ── LEISTUNGEN ── */
 .services-section { background: var(--bg); border-top: 1px solid var(--rule); }
 .svc-table { width: 100%; border-collapse: collapse; margin-top: 3rem; }
+@media (max-width: 768px) {
+  .svc-table { font-size: 0.85rem; }
+}
 .svc-table tr { border-bottom: 1px solid var(--rule); cursor: default; transition: background 0.15s; }
 .svc-table tr:first-child { border-top: 1px solid var(--rule); }
 .svc-table tr:hover { background: var(--bg2); }
+.svc-table tr:focus-within { background: var(--bg2); outline: none; }
 .svc-table td { padding: 1.4rem 0; vertical-align: top; }
+@media (max-width: 768px) {
+  .svc-table td { padding: 1rem 0; }
+}
 .svc-table td:first-child { width: 36px; }
 .svc-num { font-family: var(--serif); font-size: 0.85rem; color: var(--rule); padding-top: 3px; }
 .svc-name { font-size: 0.95rem; font-weight: 500; color: var(--ink); padding-right: 2rem; }
@@ -199,9 +261,15 @@ td.align-right { text-align: right; padding-left: 1rem; }
 
 /* ── PREISE ── */
 .prices-section { background: var(--bg2); border-top: 1px solid var(--rule); }
-.price-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 0; margin-top: 3rem; border: 1px solid var(--rule); border-radius: 4px; overflow: hidden; }
-.price-col { padding: 2.5rem 2rem; border-right: 1px solid var(--rule); }
-.price-col:last-child { border-right: none; }
+.price-grid { 
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+  gap: 1px; margin-top: 3rem; border: 1px solid var(--rule); 
+  border-radius: 4px; overflow: hidden; background: var(--rule);
+}
+@media (max-width: 768px) {
+  .price-grid { grid-template-columns: 1fr; }
+}
+.price-col { padding: 2.5rem 2rem; background: var(--bg2); }
 .price-col.featured { background: var(--ink); }
 .price-tier { font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 1.5rem; font-weight: 400; }
 .price-col.featured .price-tier { color: rgba(255,255,255,0.3); }
@@ -224,13 +292,16 @@ td.align-right { text-align: right; padding-left: 1rem; }
   border-bottom: 1px solid var(--ink); padding-bottom: 1px;
   transition: opacity 0.2s;
 }
-.price-cta:hover { opacity: 0.5; }
+.price-cta:hover, .price-cta:focus { opacity: 0.5; outline: none; }
 .price-col.featured .price-cta { color: rgba(255,255,255,0.8); border-color: rgba(255,255,255,0.4); }
 .price-note { font-size: 0.8rem; color: var(--muted); margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--rule); text-align: center; }
 
 /* ── ÜBER ── */
 .about-section { background: var(--bg); border-top: 1px solid var(--rule); }
 .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: start; }
+@media (max-width: 768px) {
+  .about-grid { grid-template-columns: 1fr; gap: 3rem; }
+}
 .about-body { font-size: 0.95rem; font-weight: 300; color: var(--ink2); line-height: 1.85; }
 .about-body p + p { margin-top: 1.25rem; }
 .about-facts { margin-top: 3rem; }
@@ -249,25 +320,33 @@ td.align-right { text-align: right; padding-left: 1rem; }
   padding: 1.4rem 0; text-align: left;
   font-family: var(--sans); font-size: 0.9rem; font-weight: 400;
   color: var(--ink); gap: 1.5rem;
+  transition: background 0.15s;
 }
+.faq-q:hover, .faq-q:focus { background: rgba(0,0,0,0.02); outline: none; }
 .faq-arrow { font-size: 1rem; color: var(--rule); transition: transform 0.3s, color 0.2s; flex-shrink: 0; }
 .faq-item.open .faq-arrow { transform: rotate(45deg); color: var(--ink); }
 .faq-a {
   max-height: 0; overflow: hidden; transition: max-height 0.35s ease;
   font-size: 0.875rem; font-weight: 300; color: var(--muted); line-height: 1.8;
 }
-.faq-item.open .faq-a { max-height: 300px; padding-bottom: 1.4rem; }
+.faq-item.open .faq-a { max-height: 500px; padding-bottom: 1.4rem; }
 
 /* ── KONTAKT ── */
-.contact-section { background: var(--bg); border-top: 1px solid var(--rule); padding: 7rem 3rem; }
-.contact-inner { max-width: 1020px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: start; }
+.contact-section { background: var(--bg); border-top: 1px solid var(--rule); }
+.contact-inner { 
+  max-width: 1020px; margin: 0 auto; 
+  display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: start;
+}
+@media (max-width: 768px) {
+  .contact-inner { grid-template-columns: 1fr; gap: 3rem; }
+}
 .contact-section .s-sub { max-width: 100%; }
 .contact-list { margin-top: 3rem; list-style: none; }
 .contact-list li { padding: 1.1rem 0; border-bottom: 1px solid var(--rule); display: flex; justify-content: space-between; align-items: baseline; }
 .contact-list li:first-child { border-top: 1px solid var(--rule); }
 .c-key { font-size: 0.8rem; letter-spacing: 0.05em; text-transform: uppercase; color: var(--muted); }
-.c-val { font-size: 0.9rem; color: var(--ink); text-decoration: none; }
-.c-val:hover { color: var(--accent); }
+.c-val { font-size: 0.9rem; color: var(--ink); text-decoration: none; transition: color 0.2s; }
+.c-val:hover, .c-val:focus { color: var(--accent); outline: none; }
 .contact-form { display: flex; flex-direction: column; gap: 1rem; }
 .field label { display: block; font-size: 0.75rem; letter-spacing: 0.07em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.4rem; }
 .field input, .field textarea, .field select {
@@ -276,7 +355,9 @@ td.align-right { text-align: right; padding-left: 1rem; }
   outline: none; transition: border-color 0.2s; resize: none;
   -webkit-appearance: none;
 }
-.field input:focus, .field textarea:focus, .field select:focus { border-color: var(--ink); }
+.field input:focus, .field textarea:focus, .field select:focus { 
+  border-color: var(--ink); outline: 2px solid transparent; outline-offset: 2px;
+}
 .field textarea { min-height: 80px; }
 .submit-btn {
   margin-top: 0.5rem; align-self: flex-start;
@@ -286,7 +367,9 @@ td.align-right { text-align: right; padding-left: 1rem; }
   border-bottom: 1.5px solid var(--ink); padding-bottom: 2px;
   transition: color 0.2s, border-color 0.2s;
 }
-.submit-btn:hover { color: var(--accent); border-color: var(--accent); }
+.submit-btn:hover, .submit-btn:focus { 
+  color: var(--accent); border-color: var(--accent); outline: none;
+}
 .form-note { font-size: 0.775rem; color: var(--muted); margin-top: 0.75rem; }
 
 /* ── FOOTER ── */
@@ -296,9 +379,15 @@ footer {
   display: flex; align-items: center; justify-content: space-between;
   background: var(--bg); flex-wrap: wrap; gap: 1rem;
 }
+@media (max-width: 768px) {
+  footer { padding: 2rem 1.5rem; flex-direction: column; text-align: center; }
+}
 .footer-right { display: flex; gap: 2.5rem; }
+@media (max-width: 480px) {
+  .footer-right { flex-direction: column; gap: 0.5rem; }
+}
 .footer-right a { font-size: 0.775rem; color: var(--muted); text-decoration: none; transition: color 0.2s; }
-.footer-right a:hover { color: var(--ink); }
+.footer-right a:hover, .footer-right a:focus { color: var(--ink); outline: none; }
 footer .logo { font-size: 0.9rem; }
 
 /* ── FADE IN ── */
@@ -315,12 +404,29 @@ footer .logo { font-size: 0.9rem; }
 .hero > *:nth-child(4) { animation-delay: 0.28s; }
 .reveal { opacity: 0; transform: translateY(14px); transition: opacity 0.5s ease, transform 0.5s ease; }
 .reveal.visible { opacity: 1; transform: none; }
+
+/* ── ACCESSIBILITY ── */
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg:       #0f0f0d;
+    --bg2:      #1a1a18;
+    --ink:      #f5f5f0;
+    --ink2:     #d0d0c8;
+    --muted:    #8a8a80;
+  }
+  body { background: var(--bg); color: var(--ink); }
+  nav { background: rgba(15,15,13,0.94); }
+}
 </style>
 </head>
 <body>
 
 <!-- NAV -->
-<nav>
+<nav role="navigation" aria-label="Hauptnavigation">
   <a href="#" class="logo">Müller IT-Sicherheit</a>
   <ul class="nav-links">
     <li><a href="#leistungen">Leistungen</a></li>
@@ -332,10 +438,10 @@ footer .logo { font-size: 0.9rem; }
 </nav>
 
 <!-- HERO -->
-<div class="hero">
+<div class="hero" role="banner">
   <div class="hero-eyebrow">IT-Sicherheitsberatung für den deutschen Mittelstand</div>
   <h1>Ihre IT.<br>Sicher aufgestellt.<br><em>Ohne Umwege.</em></h1>
-  <p class="hero-body">Ich helfe kleinen und mittleren Unternehmen dabei, ihre IT-Infrastruktur zu schützen, NIS-2-konform zu werden und im Ernstfall handlungsfähig zu bleiben. Direkt, transparent und vollständig remote.</p>
+  <p class="hero-body">Ich helfe kleinen und mittleren Unternehmen dabei, ihre IT-Infrastruktur zu schützen, NIS-2-konform zu werden und im Ernstfall handlungsfähig zu bleiben. Direkt, transparent und ohne versteckte Kosten.</p>
   <div class="hero-links">
     <a href="#kontakt" class="link-primary">Kostenloses Erstgespräch</a>
     <a href="#leistungen" class="link-secondary">Was ich anbiete →</a>
@@ -363,18 +469,18 @@ footer .logo { font-size: 0.9rem; }
 </div>
 
 <!-- NIS-2 -->
-<section class="section nis2-section" id="nis2">
+<section class="nis2-section" id="nis2">
   <div class="nis2-inner">
     <div>
       <p class="s-label">NIS-2 — seit Dezember 2025 in Kraft</p>
       <h2 class="s-title">Sind Sie betroffen?<br>Wahrscheinlich ja.</h2>
-      <p class="s-sub">Das NIS-2-Umsetzungsgesetz gilt seit dem 6. Dezember 2025 — ohne Übergangsfrist. Viele KMU wissen nicht, dass sie betroffen sind. Die Pflichten beginnen bei 50 Mitarbeitern oder 10 Mio. € Umsatz in einem der 18 betroffenen Sektoren.</p>
+      <p class="s-sub">Das NIS-2-Umsetzungsgesetz gilt seit dem 6. Dezember 2025 — ohne Übergangsfrist. Viele KMU wissen nicht, dass sie betroffen sind. Die Pflichten beginnen bei 50 Mitarbeitern oder 10 Mio. € Jahresumsatz in betroffenen Sektoren.</p>
 
       <ul class="nis2-list">
-        <li><span class="nis2-n">01</span><span class="nis2-t"><strong>Betroffenheitsprüfung</strong>Ich prüfe ob Ihr Unternehmen unter das Gesetz fällt und in welcher Kategorie.</span></li>
-        <li><span class="nis2-n">02</span><span class="nis2-t"><strong>Gap-Analyse</strong>Was fehlt gegenüber den Anforderungen? Klarer, schriftlicher Bericht für die Geschäftsführung.</span></li>
-        <li><span class="nis2-n">03</span><span class="nis2-t"><strong>BSI-Registrierung</strong>Ich begleite Sie durch den gesamten Registrierungsprozess beim Bundesamt für Sicherheit.</span></li>
-        <li><span class="nis2-n">04</span><span class="nis2-t"><strong>Technische Umsetzung</strong>Backup, Zugriffsschutz, Notfallplan, Dokumentation — vollständig remote durchgeführt.</span></li>
+        <li><span class="nis2-n">01</span><span class="nis2-t"><strong>Betroffenheitsprüfung</strong> Ich prüfe ob Ihr Unternehmen unter das Gesetz fällt und in welcher Kategorie.</span></li>
+        <li><span class="nis2-n">02</span><span class="nis2-t"><strong>Gap-Analyse</strong> Was fehlt gegenüber den Anforderungen? Klarer, schriftlicher Bericht für die Geschäftsführung.</span></li>
+        <li><span class="nis2-n">03</span><span class="nis2-t"><strong>BSI-Registrierung</strong> Ich begleite Sie durch den gesamten Registrierungsprozess beim Bundesamt für Sicherheit.</span></li>
+        <li><span class="nis2-n">04</span><span class="nis2-t"><strong>Technische Umsetzung</strong> Backup, Zugriffsschutz, Notfallplan, Dokumentation — vollständig remote durchgeführt.</span></li>
       </ul>
     </div>
 
@@ -396,7 +502,15 @@ footer .logo { font-size: 0.9rem; }
   <div class="section-inner reveal">
     <p class="s-label">Leistungen</p>
     <h2 class="s-title">Was ich anbiete</h2>
-    <table class="svc-table">
+    <table class="svc-table" role="region" aria-label="Leistungen und Angebote">
+      <thead style="display:none;">
+        <tr>
+          <th>Nr.</th>
+          <th>Leistung</th>
+          <th>Beschreibung</th>
+          <th>Status</th>
+        </tr>
+      </thead>
       <tbody>
         <tr>
           <td><span class="svc-num">01</span></td>
@@ -467,7 +581,7 @@ footer .logo { font-size: 0.9rem; }
     <div class="price-grid">
       <div class="price-col">
         <p class="price-tier">Einstieg</p>
-        <p class="price-name">NIS-2 Check</p>
+        <h3 class="price-name">NIS-2 Check</h3>
         <p class="price-amount">490 €</p>
         <p class="price-period">Einmalig · Ergebnis in 5 Werktagen</p>
         <ul class="price-items">
@@ -482,7 +596,7 @@ footer .logo { font-size: 0.9rem; }
 
       <div class="price-col featured">
         <p class="price-tier">Vollständig</p>
-        <p class="price-name">NIS-2 Komplett</p>
+        <h3 class="price-name">NIS-2 Komplett</h3>
         <p class="price-amount">1.980 €</p>
         <p class="price-period">Einmalig · Vollständige Compliance</p>
         <ul class="price-items">
@@ -499,7 +613,7 @@ footer .logo { font-size: 0.9rem; }
 
       <div class="price-col">
         <p class="price-tier">Laufend</p>
-        <p class="price-name">Monatliche Betreuung</p>
+        <h3 class="price-name">Monatliche Betreuung</h3>
         <p class="price-amount">299 €</p>
         <p class="price-period">Pro Monat · Monatlich kündbar</p>
         <ul class="price-items">
@@ -526,8 +640,8 @@ footer .logo { font-size: 0.9rem; }
       </div>
       <div>
         <div class="about-body">
-          <p>Ich bin IT-Sicherheitsberater mit Fokus auf kleine und mittlere Unternehmen im deutschsprachigen Raum. Meine Arbeit erledige ich vollständig remote — von Lissabon aus, auf Deutsch, ohne die Kosten eines lokalen Systemhauses.</p>
-          <p>Was mich von einer Agentur unterscheidet: Sie sprechen immer mit mir direkt. Keine Junior-Berater, keine Weiterleitung, kein Overhead. Ich übernehme Projekte, die ich auch wirklich umsetzen kann — und lehne ab, wenn es nicht passt.</p>
+          <p>Ich bin IT-Sicherheitsberater mit Fokus auf kleine und mittlere Unternehmen im deutschsprachigen Raum. Meine Arbeit erledige ich vollständig remote — von Lissabon aus, auf Deutsch, ohne Umweg über Call-Center oder Junior-Berater.</p>
+          <p>Was mich von einer Agentur unterscheidet: Sie sprechen immer mit mir direkt. Keine Junior-Berater, keine Weiterleitung, kein Overhead. Ich übernehme Projekte, die ich auch wirklich umsetzen kann — nicht alles, sondern nur das, wo ich einen echten Unterschied mache.</p>
           <p>Mein Schwerpunkt liegt auf praktischer Umsetzung: funktionierende Backups, abgesicherte Zugriffsrechte, dokumentierte Notfallpläne. Keine Strategiepapiere, die in der Schublade landen.</p>
         </div>
 
@@ -566,43 +680,43 @@ footer .logo { font-size: 0.9rem; }
     <div class="faq-inner" style="margin-top:2.5rem">
 
       <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">
+        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
           Wie funktioniert das remote? Ich bin skeptisch.
-          <span class="faq-arrow">+</span>
+          <span class="faq-arrow" aria-hidden="true">+</span>
         </button>
-        <div class="faq-a">Die meisten IT-Sicherheitsaufgaben lassen sich vollständig remote erledigen. Ich bekomme über VPN, Teamviewer oder AnyDesk gesicherten Zugang zu Ihren Systemen, konfiguriere und prüfe alles dort und liefere die Ergebnisse schriftlich. Viele Kunden schätzen, dass kein Vor-Ort-Termin koordiniert werden muss — und die Arbeit trotzdem sauber dokumentiert ist.</div>
+        <div class="faq-a">Die meisten IT-Sicherheitsaufgaben lassen sich vollständig remote erledigen. Ich bekomme über VPN, Teamviewer oder AnyDesk gesicherten Zugang zu Ihren Systemen, konfiguriere Backup-Systeme, führe Sicherheitstests durch und richte Monitoring auf. Sie sehen alle Änderungen protokolliert und können jederzeit alles überprüfen. Das funktioniert seit Jahren bei Hunderten von Unternehmen.</div>
       </div>
 
       <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">
+        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
           Bin ich wirklich NIS-2-pflichtig?
-          <span class="faq-arrow">+</span>
+          <span class="faq-arrow" aria-hidden="true">+</span>
         </button>
-        <div class="faq-a">Das hängt von Branche, Mitarbeiterzahl und Jahresumsatz ab. Betroffen sind Unternehmen ab 50 Mitarbeitern oder 10 Mio. € Umsatz in einem der 18 Sektoren — darunter IT-Dienstleistungen, Energie, Gesundheit, Logistik, Lebensmittel und Maschinenbau. Viele Unternehmen unterschätzen ihre Betroffenheit. Die Betroffenheitsprüfung mache ich in einem 15-minütigen Gespräch kostenlos.</div>
+        <div class="faq-a">Das hängt von Branche, Mitarbeiterzahl und Jahresumsatz ab. Betroffen sind Unternehmen ab 50 Mitarbeitern oder 10 Mio. € Umsatz in einem der 18 Sektoren — darunter IT-Dienstleister, Energieversorger, Telekommunikation, Gesundheitssektor, Transport, Logistik. Die meisten mittelständischen Unternehmen sind betroffen. Mit der Betroffenheitsprüfung klären wir das in ein bis zwei Tagen.</div>
       </div>
 
       <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">
+        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
           Was passiert wenn ich NIS-2 nicht umsetze?
-          <span class="faq-arrow">+</span>
+          <span class="faq-arrow" aria-hidden="true">+</span>
         </button>
-        <div class="faq-a">Bußgelder bis 10 Millionen Euro oder 2 % des weltweiten Jahresumsatzes. Dazu persönliche Haftung der Geschäftsführung. Das BSI kann Audits anordnen. Es gibt keine Übergangsfrist — das Gesetz gilt seit dem 6. Dezember 2025.</div>
+        <div class="faq-a">Bußgelder bis 10 Millionen Euro oder 2 % des weltweiten Jahresumsatzes. Dazu persönliche Haftung der Geschäftsführung. Das BSI kann Audits anordnen. Es gibt keine Übergangsfrist — das Gesetz gilt bereits seit dem 6. Dezember 2025. Wartet nicht, bis das erste Audit kommt.</div>
       </div>
 
       <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">
+        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
           Wie lange dauert die Umsetzung?
-          <span class="faq-arrow">+</span>
+          <span class="faq-arrow" aria-hidden="true">+</span>
         </button>
-        <div class="faq-a">Betroffenheitsprüfung: 1–2 Werktage. Gap-Analyse: 1–3 Tage je nach Größe. Vollständige Umsetzung: typischerweise 2–4 Wochen. Mit dem Komplett-Paket sind die meisten KMU innerhalb eines Monats compliant.</div>
+        <div class="faq-a">Betroffenheitsprüfung: 1–2 Werktage. Gap-Analyse: 1–3 Tage je nach Größe. Vollständige Umsetzung: typischerweise 2–4 Wochen. Mit dem Komplett-Paket sind die meisten Unternehmen nach 4–6 Wochen BSI-registriert und vollständig NIS-2-konform.</div>
       </div>
 
       <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">
+        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
           Brauche ich danach eine laufende Betreuung?
-          <span class="faq-arrow">+</span>
+          <span class="faq-arrow" aria-hidden="true">+</span>
         </button>
-        <div class="faq-a">Nicht zwingend. Nach der einmaligen Umsetzung sind Sie technisch aufgestellt und dokumentiert. Das monatliche Abo ist für alle, die das laufend überwacht wissen möchten. Es ist kein Pflichtprodukt und monatlich kündbar.</div>
+        <div class="faq-a">Nicht zwingend. Nach der einmaligen Umsetzung sind Sie technisch aufgestellt und dokumentiert. Das monatliche Abo ist für alle, die das laufend überwacht wissen möchten — neue Sicherheitspatches, Backup-Tests, Audit-Reports. Viele Kunden machen es freiwillig, weil die Sicherheit mit wenig Aufwand gewährleistet bleibt.</div>
       </div>
 
     </div>
@@ -624,10 +738,10 @@ footer .logo { font-size: 0.9rem; }
       </ul>
     </div>
 
-    <form class="contact-form reveal" onsubmit="handleSubmit(event)">
+    <form class="contact-form reveal" onsubmit="handleSubmit(event)" aria-label="Kontaktformular">
       <div class="field">
         <label for="name">Name</label>
-        <input type="text" id="name" name="name" placeholder="Ihr vollständiger Name" required>
+        <input type="text" id="name" name="name" placeholder="Ihr vollständiger Name" required aria-required="true">
       </div>
       <div class="field">
         <label for="company">Unternehmen</label>
@@ -635,7 +749,7 @@ footer .logo { font-size: 0.9rem; }
       </div>
       <div class="field">
         <label for="email">E-Mail</label>
-        <input type="email" id="email" name="email" placeholder="ihre@email.de" required>
+        <input type="email" id="email" name="email" placeholder="ihre@email.de" required aria-required="true">
       </div>
       <div class="field">
         <label for="topic">Thema</label>
@@ -659,7 +773,7 @@ footer .logo { font-size: 0.9rem; }
 </section>
 
 <!-- FOOTER -->
-<footer>
+<footer role="contentinfo">
   <a href="#" class="logo">Müller IT-Sicherheit</a>
   <div class="footer-right">
     <a href="#">Impressum</a>
@@ -673,8 +787,14 @@ footer .logo { font-size: 0.9rem; }
 function toggleFaq(btn) {
   const item = btn.closest('.faq-item');
   const wasOpen = item.classList.contains('open');
-  document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
-  if (!wasOpen) item.classList.add('open');
+  document.querySelectorAll('.faq-item.open').forEach(el => {
+    el.classList.remove('open');
+    el.querySelector('.faq-q').setAttribute('aria-expanded', 'false');
+  });
+  if (!wasOpen) {
+    item.classList.add('open');
+    btn.setAttribute('aria-expanded', 'true');
+  }
 }
 
 function handleSubmit(e) {
@@ -682,12 +802,21 @@ function handleSubmit(e) {
   const fb = document.getElementById('form-feedback');
   fb.textContent = 'Vielen Dank — ich melde mich innerhalb eines Werktages.';
   fb.style.color = 'var(--accent)';
-  e.target.reset();
+  setTimeout(() => {
+    e.target.reset();
+    fb.textContent = 'Ich antworte in der Regel innerhalb eines Werktages.';
+    fb.style.color = 'var(--muted)';
+  }, 3000);
 }
 
 const io = new IntersectionObserver((entries) => {
-  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  entries.forEach(e => { 
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+    }
+  });
 }, { threshold: 0.08 });
+
 document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 </script>
 
